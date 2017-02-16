@@ -1,6 +1,6 @@
 import java.util.*;
 public class NegozioMain {
-
+//NON COMPLETO, MANCA LA POSSIBILITÀ DI INSERIRE I DISCHI
 	public static void main(String[] args) 
 	{
 		ArrayList<ShowName> disk = new ArrayList <ShowName>();
