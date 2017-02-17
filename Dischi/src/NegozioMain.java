@@ -1,13 +1,10 @@
-<<<<<<< HEAD
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 public class NegozioMain {
 
-	@SuppressWarnings("resource")
+	@SuppressWarnings({ "resource", "unused" })
 	public static void main(String[] args) 
 	{
 		int c;
-		Scanner s;
 		ArrayList<ShowName> disk = new ArrayList <ShowName>();
 		ArrayList<ShowYear> year = new ArrayList <ShowYear>();
 		disk.add(new ShowName("Album 1"));
@@ -38,7 +35,7 @@ public class NegozioMain {
 		System.out.print("Input: ");
 		Scanner input= new Scanner(System.in);
 		c=input.nextInt();
-		System.out.println(c);
+		//System.out.println(c);
 		//switch (c)
 		//{
 		//for (int i=0, i<disco)
