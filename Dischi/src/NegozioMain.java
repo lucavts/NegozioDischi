@@ -1,9 +1,12 @@
 import java.util.*;
 public class NegozioMain {
 
-	@SuppressWarnings({ "resource", "unused" })
+	@SuppressWarnings({ "resource" })
 	public static void main(String[] args) 
 	{
+		int repeat;
+		do
+		{
 		int c;
 		ArrayList<ShowName> disk = new ArrayList <ShowName>();
 		ArrayList<ShowYear> year = new ArrayList <ShowYear>();
@@ -72,6 +75,11 @@ public class NegozioMain {
 			//break;
 		//}
 		}
+		System.out.print("Premi 3 per ripetere il programma: ");
+		Scanner repeater= new Scanner (System.in);
+		repeat=repeater.nextInt();
+			}
+		while (repeat==3);
 		}
-//BISOGNA INSERIRE UN METODO PER RICOMINCIARE GLI IF/SWITCH QUANDO CICLI CONCLUSI
+//IL PROGRAMMA NON SALVA I NUOVI ALBUM INSERITI DURANTE IL CASE 2
 }
