@@ -58,20 +58,17 @@ public class NegozioMain {
 			System.out.print("Quanti dischi vuoi aggiungere? ");
 			Scanner input2 = new Scanner (System.in);
 			int num=input2.nextInt();
-			int cont1=1;
-			do
+			for (int i=0; i<num; i++)
 			{
-				System.out.print("Indica il nome dell'album: ");
-				Scanner inputalbum= new Scanner (System.in);		
-				String namealbum=inputalbum.nextLine();
-				System.out.print("Indica la data di uscita dell'album: ");
-				Scanner inputdata= new Scanner (System.in);
-				int yearalbum=inputdata.nextInt();
-				disk.add(new ShowName(namealbum));
-				year.add(new ShowYear (yearalbum));
-				cont1++;
+				System.out.print("Inserisci il nome del disco: ");
+				Scanner input3 =new Scanner (System.in);
+				String nomealbum=input3.nextLine();
+				disk.add(new ShowName(nomealbum +i));
+				System.out.print("Inserisci l'anno ddi pulicazione dell'album: ");
+				Scanner input4=new Scanner (System.in);
+				int annopubblicazione=input4.nextInt();
+				year.add(new ShowYear (annopubblicazione +i));
 			}
-			while (cont1==num);
 			//break;
 		//}
 		}
