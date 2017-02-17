@@ -1,15 +1,12 @@
 import java.util.*;
 public class NegozioMain {
-
+//IL PROGRAMMA ORA SALVA CORRETTAMENTE I NUOVI ALBUM E NON HA PROBLEMI IN FASE DI OUTPUT. BISOGNA IMPOSTARE UN LIMITE MAX DI 40 ALBUM
 	@SuppressWarnings({ "resource" })
 	public static void main(String[] args) 
 	{
 		ArrayList<ShowName> disk = new ArrayList <ShowName>();
 		ArrayList<ShowYear> year = new ArrayList <ShowYear>();
 		int repeat;
-		do
-		{
-		int c;
 		disk.add(new ShowName("Album 1"));
 		disk.add(new ShowName("Album 2"));
 		disk.add(new ShowName("Album 3"));
@@ -34,6 +31,9 @@ public class NegozioMain {
 		year.add(new ShowYear (2003));
 		year.add(new ShowYear (2016));
 		year.add(new ShowYear (2017));
+		do
+		{
+		int c;
 		System.out.println("Premi 1 per visualizzare i dischi, premi 2 per inserirli");
 		System.out.print("Input: ");
 		Scanner input= new Scanner(System.in);
@@ -78,5 +78,4 @@ public class NegozioMain {
 			}
 		while (repeat==3);
 		}
-//IL PROGRAMMA SALVA I NUOVI ALBUM, MA HA DEI PROBLEMI IN OUTPUT
 }
