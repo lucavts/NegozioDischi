@@ -4,12 +4,12 @@ public class NegozioMain {
 	@SuppressWarnings({ "resource" })
 	public static void main(String[] args) 
 	{
+		ArrayList<ShowName> disk = new ArrayList <ShowName>();
+		ArrayList<ShowYear> year = new ArrayList <ShowYear>();
 		int repeat;
 		do
 		{
 		int c;
-		ArrayList<ShowName> disk = new ArrayList <ShowName>();
-		ArrayList<ShowYear> year = new ArrayList <ShowYear>();
 		disk.add(new ShowName("Album 1"));
 		disk.add(new ShowName("Album 2"));
 		disk.add(new ShowName("Album 3"));
@@ -63,20 +63,20 @@ public class NegozioMain {
 				System.out.print("Inserisci il nome del disco: ");
 				Scanner input3 =new Scanner (System.in);
 				String nomealbum=input3.nextLine();
-				disk.add(new ShowName(nomealbum +i));
-				System.out.print("Inserisci l'anno ddi pulicazione dell'album: ");
+				disk.add(new ShowName(nomealbum));
+				System.out.print("Inserisci l'anno di pulicazione dell'album: ");
 				Scanner input4=new Scanner (System.in);
 				int annopubblicazione=input4.nextInt();
-				year.add(new ShowYear (annopubblicazione +i));
+				year.add(new ShowYear(annopubblicazione));
 			}
 			//break;
 		//}
 		}
-		System.out.print("Premi 3 per ripetere il programma: ");
+		System.out.print("Premi 3 per ripetere il programma, oppure premi un qualsiasi altro tasto per uscire: ");
 		Scanner repeater= new Scanner (System.in);
 		repeat=repeater.nextInt();
 			}
 		while (repeat==3);
 		}
-//IL PROGRAMMA NON SALVA I NUOVI ALBUM INSERITI DURANTE IL CASE 2
+//IL PROGRAMMA SALVA I NUOVI ALBUM, MA HA DEI PROBLEMI IN OUTPUT
 }
