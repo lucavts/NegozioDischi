@@ -9,4 +9,12 @@ public class ShowYear {
 	{
 		System.out.println("Data di uscita dell'album: "+this.pubyear);
 	}
+	public Integer getpubyear()
+	{
+		return this.pubyear;
+	}
+	public void setpubyear (Integer pubyear)
+			{
+				this.pubyear=pubyear;
+			}
 }
