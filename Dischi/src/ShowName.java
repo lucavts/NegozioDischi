@@ -17,4 +17,24 @@ public class ShowName {
 	{
 		this.disco=disco;
 	}
-}
+	 	public static int showNameCompare(ShowName NAr1, ShowName NAr2)
+	{
+		String f1=NAr1.getDisco();
+		String f2=NAr2.getDisco();
+		if(f1.compareTo(f2) > 0)
+		{
+			return -1;
+		}
+		else
+		{
+			if(f1.compareTo(f2)== 0)
+			{
+				return 0;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+	}
+} 

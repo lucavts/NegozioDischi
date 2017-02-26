@@ -1,25 +1,25 @@
 import java.util.*;
 public class NegozioMain {
- 	@SuppressWarnings({ "resource" })
+	@SuppressWarnings({ "resource" })
 	public static void main(String[] args) 
 	{
 		SearchDiskByName dname= new SearchDiskByName();
 		SearchDiskByYear dyear= new SearchDiskByYear();
-		ArrayList<ShowName> disk = new ArrayList <ShowName>();
+	 	ArrayList<ShowName> disk = new ArrayList <ShowName>();
 		ArrayList<ShowYear> year = new ArrayList <ShowYear>();
 		int repeat;
-		disk.add(new ShowName("Album 1"));
-		disk.add(new ShowName("Album 2"));
-		disk.add(new ShowName("Album 3"));
-		disk.add(new ShowName("Album 4"));
-		disk.add(new ShowName("Album 5"));
-		disk.add(new ShowName("Album 6"));
-		disk.add(new ShowName("Album 7"));
-		disk.add(new ShowName("Album 8"));
-		disk.add(new ShowName("Album 9"));
-		disk.add(new ShowName("Album 10"));
-		disk.add(new ShowName("Album 11"));
-		disk.add(new ShowName("Album 12"));
+		disk.add(new ShowName("Album A"));
+		disk.add(new ShowName("Album B"));
+		disk.add(new ShowName("Album C"));
+		disk.add(new ShowName("Album D"));
+		disk.add(new ShowName("Album E"));
+		disk.add(new ShowName("Album F"));
+		disk.add(new ShowName("Album G"));
+		disk.add(new ShowName("Album H"));
+		disk.add(new ShowName("Album I"));
+		disk.add(new ShowName("Album J"));
+		disk.add(new ShowName("Album K"));
+		disk.add(new ShowName("Album L"));
 		year.add(new ShowYear (1978));
 		year.add(new ShowYear (1958));
 		year.add(new ShowYear (2008));
@@ -36,26 +36,64 @@ public class NegozioMain {
 		{
 			dname.setdisklist(disk);
 			dyear.setyeardisklist(year);
+			ShowYear aryear[] = new ShowYear[year.size()];
+			aryear=year.toArray(aryear);
+			ShowName ardisk[]= new ShowName[disk.size()];
+			ardisk=disk.toArray(ardisk);
+			List<ShowYear> outputyear= Arrays.asList(aryear);
+			List<ShowName> outputname= Arrays.asList(ardisk);
 			int c;
 			System.out.println("Premi 1 per visualizzare i dischi, premi 2 per inserirli, 4 per effettuare una ricerca nel Database");
 			System.out.print("Input: ");
 			Scanner input= new Scanner(System.in);
 			c=input.nextInt();
-		//System.out.println(c);
-		//switch (c)
-		//{
-		//for (int i=0, i<disco)
-		//case '1':
 			if (c==1)
 			{
-				for (int i=0;i<disk.size();i++)// OUTPUT
+				int cc;
+				System.out.println("Visualizzare gli album in ordine alfabetico [1] o in ordine di data[2]?");
+				System.out.print("Input: ");
+				Scanner sc=new Scanner (System.in);
+				cc=sc.nextInt();
+				System.out.println("*****--OUTPUT DEI DISCHI--*****");
+				for (int i=0;i<disk.size();i++)
 				{
-					disk.get(i).PrintName();
-					year.get(i).PrintYear();
+					if (cc==1)
+					{
+						ShowName ntemp;
+						for (int us=0;us<ardisk.length-1;us++)
+						{
+							for (int q=0;q<ardisk.length-us-1;q++)
+							{
+								if (ShowName.showNameCompare(ardisk[q], ardisk[q+1])<0)
+								{
+									ntemp = ardisk[q];
+				                    ardisk[q] = ardisk[q+1];
+				                    ardisk[q + 1] = ntemp;
+								}
+							}
+						}
+					}
+					if (cc==2)
+					{
+						ShowYear ytemp;
+						for (int pl = 0; pl < aryear.length-1; pl++)
+						{
+						   for(int y = 0; y < aryear.length-pl-1; y++)
+						   {
+						            if(ShowYear.showYearCompare(aryear[y], aryear[y+1])==-1)
+						            {
+						                  ytemp = aryear [y + 1];
+						                   aryear [y+1]= aryear [y];
+						                   aryear [y] = ytemp;
+						            }
+						   }
+						}
+						//GnomeSortYear.gnm_sort_year(year);
+					}
+					outputname.get(i).PrintName();
+					outputyear.get(i).PrintYear();
 				}
 			}
-			//break;
-		//case '2':
 			if (c==2)
 			{
 				System.out.print("Quanti dischi vuoi aggiungere? ");
@@ -72,9 +110,7 @@ public class NegozioMain {
 					int annopubblicazione=input4.nextInt();
 					year.add(new ShowYear(annopubblicazione));
 					}
-			//break;
-		//}
-			}
+				}
 			if (c==4)
 			{
 				System.out.println("Premi 6 per effettuare una ricerca mediante nome, 7 per effettuare una ricerca mediante data");
