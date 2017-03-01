@@ -21,13 +21,13 @@ public class ShowName {
 	{
 		String f1=NAr1.getDisco();
 		String f2=NAr2.getDisco();
-		if(f1.compareTo(f2) > 0)
+		if(f1.compareTo(f2)>0)
 		{
 			return -1;
 		}
 		else
 		{
-			if(f1.compareTo(f2)== 0)
+			if(f1.compareTo(f2)==0)
 			{
 				return 0;
 			}

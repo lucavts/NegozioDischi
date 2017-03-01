@@ -51,6 +51,7 @@ public class NegozioMain {
 			{
 				int cc;
 				System.out.println("Visualizzare gli album in ordine alfabetico [1] o in ordine di data[2]?");
+				System.out.println("Premere qualsiasi altro numero per visualizzare i dischi in modo non ordinato");
 				System.out.print("Input: ");
 				Scanner sc=new Scanner (System.in);
 				cc=sc.nextInt();
@@ -68,7 +69,7 @@ public class NegozioMain {
 								{
 									ntemp = ardisk[q];
 				                    ardisk[q] = ardisk[q+1];
-				                    ardisk[q + 1] = ntemp;
+				                    ardisk[q+1] = ntemp;
 								}
 							}
 						}
@@ -76,22 +77,21 @@ public class NegozioMain {
 					if (cc==2)
 					{
 						ShowYear ytemp;
-						for (int pl = 0; pl < aryear.length-1; pl++)
+						for (int pl=0; pl<aryear.length-1;pl++)
 						{
-						   for(int y = 0; y < aryear.length-pl-1; y++)
+						   for(int y=0;y<aryear.length-pl-1;y++)
 						   {
-						            if(ShowYear.showYearCompare(aryear[y], aryear[y+1])==-1)
+						            if(ShowYear.showYearCompare(aryear[y], aryear[y+1])<0)
 						            {
-						                  ytemp = aryear [y + 1];
-						                   aryear [y+1]= aryear [y];
-						                   aryear [y] = ytemp;
+						                   ytemp = aryear [y];
+						                   aryear [y]= aryear [y+1];
+						                   aryear [y+1] = ytemp;						                  
 						            }
 						   }
 						}
-						//GnomeSortYear.gnm_sort_year(year);
 					}
 					outputname.get(i).PrintName();
-					outputyear.get(i).PrintYear();
+	                outputyear.get(i).PrintYear();
 				}
 			}
 			if (c==2)
