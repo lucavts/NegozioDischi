@@ -7,9 +7,9 @@ public class ShowName {
 	}
 	public void PrintName()
 	{
-		System.out.println("Nome disco: "+this.disco);
+		System.out.println("Nome disco: "+this.disco); //METODO PER L'OUTPUT DEL NOME DEL DISCO
 	}
-	public String getDisco()
+	public String getDisco() //METODO PER OTTENERE IL DISCO NELLA MAIN
 	{
 		return this.disco;
 	}
@@ -17,23 +17,23 @@ public class ShowName {
 	{
 		this.disco=disco;
 	}
-	 	public static int showNameCompare(ShowName NAr1, ShowName NAr2)
+	 	public static int showNameCompare(ShowName NAr1, ShowName NAr2) //METODO PER ORDINARE IL DISCO PER NOME
 	{
-		String f1=NAr1.getDisco();
+		String f1=NAr1.getDisco(); 
 		String f2=NAr2.getDisco();
-		if(f1.compareTo(f2)>0)
+		if(f1.compareTo(f2)>0) //SE F1 È MAGGIORE DI F2
 		{
-			return -1;
+			return -1; //RITORNA IL VALORE -1
 		}
 		else
 		{
-			if(f1.compareTo(f2)==0)
+			if(f1.compareTo(f2)==0) //SE F1 È UGUALE AD F2
 			{
-				return 0;
+				return 0; //RITORNA IL VALORE 0
 			}
-			else
+			else //SE F1 È MINORE DI F2
 			{
-				return 1;
+				return 1; //RITORNA IL VALORE 1
 			}
 		}
 	}
